@@ -110,72 +110,72 @@ public class HomeActivity extends AppCompatActivity {
                 if (position == 1) {
                     bottomNavigation.setNotification("", 1);
 
-                    floatingActionButton.setVisibility(View.VISIBLE);
-                    floatingActionButton.setAlpha(0f);
-                    floatingActionButton.setScaleX(0f);
-                    floatingActionButton.setScaleY(0f);
-                    floatingActionButton.animate()
-                            .alpha(1)
-                            .scaleX(1)
-                            .scaleY(1)
-                            .setDuration(300)
-                            .setInterpolator(new OvershootInterpolator())
-                            .setListener(new Animator.AnimatorListener() {
-                                @Override
-                                public void onAnimationStart(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    floatingActionButton.animate()
-                                            .setInterpolator(new LinearOutSlowInInterpolator())
-                                            .start();
-                                }
-
-                                @Override
-                                public void onAnimationCancel(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationRepeat(Animator animation) {
-
-                                }
-                            })
-                            .start();
-
-                } else {
-                    if (floatingActionButton.getVisibility() == View.VISIBLE) {
-                        floatingActionButton.animate()
-                                .alpha(0)
-                                .scaleX(0)
-                                .scaleY(0)
-                                .setDuration(300)
-                                .setInterpolator(new LinearOutSlowInInterpolator())
-                                .setListener(new Animator.AnimatorListener() {
-                                    @Override
-                                    public void onAnimationStart(Animator animation) {
-
-                                    }
-
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        floatingActionButton.setVisibility(View.GONE);
-                                    }
-
-                                    @Override
-                                    public void onAnimationCancel(Animator animation) {
-                                        floatingActionButton.setVisibility(View.GONE);
-                                    }
-
-                                    @Override
-                                    public void onAnimationRepeat(Animator animation) {
-
-                                    }
-                                })
-                                .start();
-                    }
+//                    floatingActionButton.setVisibility(View.VISIBLE);
+//                    floatingActionButton.setAlpha(0f);
+//                    floatingActionButton.setScaleX(0f);
+//                    floatingActionButton.setScaleY(0f);
+//                    floatingActionButton.animate()
+//                            .alpha(1)
+//                            .scaleX(1)
+//                            .scaleY(1)
+//                            .setDuration(300)
+//                            .setInterpolator(new OvershootInterpolator())
+//                            .setListener(new Animator.AnimatorListener() {
+//                                @Override
+//                                public void onAnimationStart(Animator animation) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onAnimationEnd(Animator animation) {
+//                                    floatingActionButton.animate()
+//                                            .setInterpolator(new LinearOutSlowInInterpolator())
+//                                            .start();
+//                                }
+//
+//                                @Override
+//                                public void onAnimationCancel(Animator animation) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onAnimationRepeat(Animator animation) {
+//
+//                                }
+//                            })
+//                            .start();
+//
+//                } else {
+//                    if (floatingActionButton.getVisibility() == View.VISIBLE) {
+//                        floatingActionButton.animate()
+//                                .alpha(0)
+//                                .scaleX(0)
+//                                .scaleY(0)
+//                                .setDuration(300)
+//                                .setInterpolator(new LinearOutSlowInInterpolator())
+//                                .setListener(new Animator.AnimatorListener() {
+//                                    @Override
+//                                    public void onAnimationStart(Animator animation) {
+//
+//                                    }
+//
+//                                    @Override
+//                                    public void onAnimationEnd(Animator animation) {
+//                                        floatingActionButton.setVisibility(View.GONE);
+//                                    }
+//
+//                                    @Override
+//                                    public void onAnimationCancel(Animator animation) {
+//                                        floatingActionButton.setVisibility(View.GONE);
+//                                    }
+//
+//                                    @Override
+//                                    public void onAnimationRepeat(Animator animation) {
+//
+//                                    }
+//                                })
+//                                .start();
+//                    }
                 }
                 return true;
             }
@@ -191,7 +191,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void run() {
                 AHNotification notification = new AHNotification.Builder()
-                        .setText(":)")
+                        .setText("12")
                         .setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.color_notification_back))
                         .setTextColor(ContextCompat.getColor(HomeActivity.this, R.color.color_notification_text))
                         .build();
@@ -221,8 +221,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         } else {
             if (addItems) {
-                AHBottomNavigationItem item4 = new AHBottomNavigationItem(getString(R.string.tab_4), ContextCompat.getDrawable(this, R.drawable.ic_maps_local_bar), ContextCompat.getColor(this, R.color.color_tab_4));
-                AHBottomNavigationItem item5 = new AHBottomNavigationItem(getString(R.string.tab_5), ContextCompat.getDrawable(this, R.drawable.ic_maps_place), ContextCompat.getColor(this, R.color.color_tab_5));
+                AHBottomNavigationItem item4 = new AHBottomNavigationItem(getString(R.string.tab_4),
+                        ContextCompat.getDrawable(this, R.drawable.ic_maps_local_bar),
+                        ContextCompat.getColor(this, R.color.color_tab_4));
+                AHBottomNavigationItem item5 = new AHBottomNavigationItem(getString(R.string.tab_5),
+                        ContextCompat.getDrawable(this, R.drawable.ic_maps_place),
+                        ContextCompat.getColor(this, R.color.color_tab_5));
                 bottomNavigation.addItem(item4);
                 bottomNavigation.addItem(item5);
                 bottomNavigation.setNotification("1", 3);
